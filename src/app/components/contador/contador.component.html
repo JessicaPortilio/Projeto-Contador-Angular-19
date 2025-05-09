@@ -1,0 +1,40 @@
+<div class="counter-container">
+    <!-- 
+        {{ contadorService.getContador() }}: Isso é interpolação Angular. 
+        Está chamando a função getContador() do serviço e mostrando o valor atual 
+        do contador na tela.
+    -->
+    <h1>Counter: {{ contadorService.getContador() }}</h1>
+    
+    <!-- 
+        Botões para controlar o contador:
+        (click)="descrementar()": Quando o botão for clicado, 
+        executa a função descrementar() do componente.
+    -->
+    <div class="button-group">
+        <button class="btn decrement" (click)="descrementar()">Decrement</button>
+        <button class="btn reset" (click)="resetar()">Reset</button>
+        <button class="btn increment" (click)="incrementar()">Increment</button>
+    </div>
+
+    <!-- 
+        [ngSwitch]="getEstadoContador()": Usa o valor retornado por 
+        getEstadoContador() para decidir qual mensagem mostrar.
+    -->
+    <div class="counter-status" [ngSwitch]="getEstadoContador()">
+        <!-- 
+            ngSwitch é como um interruptor: mostra um bloco diferente para cada "caso". 
+            Se o estado for Positivo, aparece este parágrafo.
+            -->
+        <p *ngSwitchCase="EstadoContador.Positivo" class="positive">
+            <!-- <i class="fas fa-arrow-up">: Ícone de seta para cima (usando FontAwesome). -->
+            <i class="fas fa-arrow-up"></i> O contador é positivo.
+        </p>
+        <p *ngSwitchCase="EstadoContador.Neutro" class="neutral">
+            <i class="fas fa-equals"></i> O contador é neutro.
+        </p>
+        <p *ngSwitchCase="EstadoContador.Negativo" class="negative">
+            <i class="fas fa-arrow-down"></i> O contador é negativo.
+        </p>
+    </div>
+</div>

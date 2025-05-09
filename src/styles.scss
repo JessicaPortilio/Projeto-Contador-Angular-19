@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o espaçamento interno padrão de todos os elementos */
+    box-sizing: border-box; /* Garante que padding e borda sejam incluídos 
+    na largura/altura dos elementos */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Define a fonte principal como Roboto 
+    (ou sans-serif se Roboto não estiver disponível) */
+
+    line-height: 1.6; /* Define a altura da linha para facilitar a 
+    leitura do texto */
+    
+    color: #fff; /* Define a cor do texto como branco */
+    
+    background-color: #817e7e4b; /* Define a cor de fundo da página como um 
+    cinza escuro */
+}
+
+
+/* Responsive base font size */
+/* Tamanho base da fonte responsivo, que se adapta à largura da tela */
+html {
+    font-size: 16px; /* Define o tamanho base da fonte como 16 pixels */
+
+    @media (max-width: 768px) {
+        font-size: 14px; /* Se a largura da tela for 768px ou menor, reduz o 
+        tamanho da fonte para 14 pixels */
+    }
+}

@@ -1,0 +1,185 @@
+/* Importa a fonte 'Roboto' do Google Fonts com diferentes espessuras (300, 400, 500, 700) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Importa os ícones da biblioteca Font Awesome para usar setas e símbolos */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* Estilos para o contêiner principal do contador */
+.counter-container {
+    font-family: 'Roboto', sans-serif; /* Usa a fonte Roboto para todo o 
+    texto dentro do contêiner */
+    max-width: 600px; /* Largura máxima de 600 pixels */
+    margin: 2rem auto; /* Espaço externo de 2rem acima/abaixo e 
+    centraliza horizontalmente */
+    padding: 2rem; /* Espaço interno de 2rem em todos os lados */
+    border-radius: 12px; /* Arredonda os cantos com raio de 12 pixels */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor 
+    do contêiner */
+    background-color: #ffffff; /* Fundo branco */
+    text-align: center; /* Centraliza o texto */
+    transition: all 0.3s ease; /* Suaviza todas as mudanças de estilo em 
+    0.3 segundos */
+
+    h1 {
+        font-size: 2.5rem; /* Tamanho grande do título */
+        color: #2c3e50; /* Cor azul escuro */
+        margin-bottom: 1.5rem; /* Espaço abaixo do título */
+        font-weight: 500; /* Peso da fonte intermediário */
+    }
+
+    /* Grupo de botões */
+    .button-group {
+        display: flex; /* Usa layout flexível para alinhar botões */
+        justify-content: center; /* Centraliza os botões horizontalmente */
+        gap: 1rem; /* Espaçamento entre os botões */
+        margin-bottom: 2rem; /* Espaço abaixo do grupo */
+        flex-wrap: wrap; /* Permite que os botões quebrem linha em telas menores */
+    }
+
+    /* Estilos comuns a todos os botões */
+    .btn {
+        padding: 0.75rem 1.5rem; /* Espaçamento interno 
+        (topo/baixo 0.75rem, lados 1.5rem) */
+        font-size: 1rem; /* Tamanho da fonte normal */
+        border: none; /* Remove a borda padrão */
+        border-radius: 6px; /* Arredonda os cantos do botão */
+        cursor: pointer; /* Muda o cursor para “mãozinha” ao passar o mouse */
+        transition: all 0.2s ease; /* Suaviza animações */
+        font-weight: 500; /* Peso da fonte médio */
+        text-transform: uppercase; /* Deixa o texto todo em maiúsculas */
+        letter-spacing: 0.5px; /* Espaçamento entre letras */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve no botão */
+
+        &:hover {
+            transform: translateY(-2px); /* Move o botão ligeiramente para cima 
+            ao passar o mouse */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+        }
+
+        &:active {
+            transform: translateY(0); /* Volta à posição normal ao clicar */
+        }
+
+        /* Estilo específico para botão de incremento */
+        &.increment {
+            background-color: #4CAF50; /* Verde */
+            color: white; /* Texto branco */
+
+            &:hover {
+                background-color: #3e8e41; /* Verde mais escuro ao passar o mouse */
+            }
+        }
+
+        /* Estilo para botão de decremento */
+        &.decrement {
+            background-color: #f44336; /* Vermelho */
+            color: white;
+
+            &:hover {
+                background-color: #d32f2f; /* Vermelho mais escuro */
+            }
+        }
+
+        /* Estilo para botão de reset */
+        &.reset {
+            background-color: #2196F3; /* Azul */
+            color: white;
+
+            &:hover {
+                background-color: #0b7dda; /* Azul mais escuro */
+            }
+        }
+    }
+
+    /* Área onde o estado do contador é exibido */
+    .counter-status {
+        margin-top: 1.5rem; /* Espaço acima da mensagem */
+        padding: 1rem; /* Espaço interno */
+        border-radius: 8px; /* Arredonda os cantos */
+        font-size: 1.2rem; /* Tamanho maior do texto */
+
+        p {
+            margin: 0; /* Remove margens */
+            display: flex; /* Flexbox para alinhamento */
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            gap: 0.5rem; /* Espaço entre ícone e texto */
+
+            i {
+                font-size: 1.4rem; /* Aumenta o tamanho dos ícones */
+            }
+        }
+
+        /* Quando o contador é positivo */
+        .positive {
+            color: #2e7d32; /* Verde escuro */
+            background-color: rgba(46, 125, 50, 0.1); /* Verde claro com transparência */
+            animation: pulse 2s infinite; /* Aplica animação de pulsação continuamente */
+        }
+
+        /* Quando o contador é neutro (zero) */
+        .neutral {
+            color: #546e7a; /* Cinza azulado */
+            background-color: rgba(84, 110, 122, 0.1); /* Fundo cinza claro */
+            font-style: italic; /* Deixa o texto em itálico */
+        }
+
+        /* Quando o contador é negativo */
+        .negative {
+            color: #c62828; /* Vermelho escuro */
+            background-color: rgba(198, 40, 40, 0.1); /* Vermelho claro com transparência */
+            animation: shake 0.5s; /* Aplica efeito de "tremor" ao mudar para negativo */
+        }
+    }
+}
+
+/* Animação de pulsação: aumenta e diminui levemente o elemento */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Tamanho normal */
+    }
+
+    50% {
+        transform: scale(1.05); /* Aumenta um pouco */
+    }
+
+    100% {
+        transform: scale(1); /* Volta ao tamanho original */
+    }
+}
+
+/* Animação de "tremor" horizontal */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0); /* Posição original */
+    }
+
+    20%, 60% {
+        transform: translateX(-5px); /* Move para a esquerda */
+    }
+
+    40%, 80% {
+        transform: translateX(5px); /* Move para a direita */
+    }
+}
+
+/* Estilos aplicados em telas pequenas (menos de 600px de largura) */
+@media (max-width: 600px) {
+    .counter-container {
+        padding: 1.5rem; /* Reduz o espaçamento interno */
+        margin: 1rem; /* Reduz margem externa */
+
+        h1 {
+            font-size: 2rem; /* Reduz o tamanho do título */
+        }
+
+        .button-group {
+            flex-direction: column; /* Coloca os botões em coluna */
+            gap: 0.75rem; /* Reduz o espaço entre botões */
+        }
+
+        .btn {
+            width: 100%; /* Cada botão ocupa toda a largura disponível */
+        }
+    }
+}
