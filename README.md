@@ -1,59 +1,66 @@
-# Contador
+<div align="center">
+  <h1>🔢 Contador - Angular</h1>
+  <p>Um simples contador com botões de incremento, decremento e reset</p>
+</div>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+---
 
-## Development server
+## 📌 Descrição
 
-To start a local development server, run:
+Este projeto consiste em um componente Angular chamado `ContadorComponent`, que implementa um contador interativo com funcionalidades básicas de:
+
+- Incrementar valor
+- Decrementar valor
+- Resetar para zero
+
+O valor atual do contador é exibido dinamicamente na tela e pode ser manipulado com apenas um clique.
+
+---
+
+## ⚙️ Funcionalidades
+
+- ➕ **Incrementar**: Aumenta o valor do contador em 1.
+- ➖ **Decrementar**: Diminui o valor do contador em 1 (não fica negativo, se desejado).
+- 🔄 **Resetar**: Zera o contador.
+- 🧩 **Componente independente**: Pode ser reutilizado em qualquer outro projeto Angular.
+- 🎨 **Visual personalizável** com SCSS.
+
+---
+
+## 🧱 Estrutura do Componente
+
+### `contador.component.ts`
+
+Contém a lógica principal do contador, incluindo:
+- Valor atual
+- Métodos de incremento, decremento e reset
+
+### `contador.component.html`
+
+Define a interface do usuário:
+- Mostra o número atual
+- Botões para controlar o valor
+
+### `contador.component.scss`
+
+Estiliza o componente com:
+- Layout centralizado
+- Cores personalizadas
+- Botões responsivos
+
+---
+
+## 📦 Instalação
 
 ```bash
+# Clone o repositório
+git clone https://github.com/JessicaPortilio/Projeto-Contador-Angular-19.git
+# Acesse o projeto
+cd contador-angular
+
+# Instale as dependências
+npm install
+
+# Inicie a aplicação
 ng serve
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
