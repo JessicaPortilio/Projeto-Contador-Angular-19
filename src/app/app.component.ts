@@ -9,5 +9,5 @@ import { ContadorComponent } from "./components/contador/contador.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'contador';
+  
 }
